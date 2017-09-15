@@ -14,7 +14,7 @@ const links = data =>
   )
 
 const formatDados = (data, type) =>
-   data.dados
+  data.dados
    .sort(orderByName)
    .map((d, i) =>
      ({
