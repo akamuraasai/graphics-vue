@@ -48,7 +48,7 @@ const formatSeries = (series, attributes, data, format, links) =>
         .map(d => ({ ...d, name: d.alias || d.name }))
     })
   }
-)
+  )
 
 const checkTypeIsPie = series => series.filter(s => s.type === 'pie').length > 0
 
