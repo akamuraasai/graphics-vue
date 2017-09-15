@@ -33,9 +33,6 @@ export const INITIAL_OPTIONS = {
 }
 
 const abbreviateNumber = function (num, fixed) {
-  if (num === null || num === 0) {
-    return '0'
-  }
   fixed = (!fixed || fixed < 0) ? 0 : fixed
   const b = (num).toPrecision(2).split('e')
   const k = b.length === 1 ? 0 : Math.floor(Math.min(b[1].slice(1), 14) / 3)
@@ -45,6 +42,8 @@ const abbreviateNumber = function (num, fixed) {
   return e
 }
 
+const correctNumber = num => num === null || num === 0 ? '0' : abbreviateNumber(num)
+
 export const FORMAT_TYPE = {
   0: {
     number: params => Number(params.value).toLocaleString(),
@@ -53,9 +52,9 @@ export const FORMAT_TYPE = {
     string: params => `${params.value} [${params.data.active === '1' ? 'Ativo' : 'Inativo'}]`
   },
   1: {
-    number: params => abbreviateNumber(Number(params.value)),
-    percent: params => `${abbreviateNumber(Number(params.value))}%`,
-    money: params => `R$ ${abbreviateNumber(Number(params.value))}`,
+    number: params => correctNumber(Number(params.value)),
+    percent: params => `${correctNumber(Number(params.value))}%`,
+    money: params => `R$ ${correctNumber(Number(params.value))}`,
     string: params => `${params.value} [${params.data.active === '1' ? 'Ativo' : 'Inativo'}]`
   }
 }
