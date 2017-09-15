@@ -6,24 +6,24 @@ import { API_HOME, FORMAT_TYPE, CATEGORIES } from '@/helpers/consts'
 const orderByName = (x, y) => x.name - y.name
 const orderGraphics = (x, y) => x.order - y.order
 const links = data =>
- data.map((item, i, arr) => (
-   {
-     source: item.name,
-     target: arr[i + 1] !== undefined ? arr[i + 1].name : ''
-   })
-)
-
-const formatDados = (data, type) =>
-  data.dados
-  .sort(orderByName)
-  .map((d, i) =>
-    ({
-      ...d,
-      id: d.name,
-      alias: data.aliases ? data.aliases[d.name] : null,
-      itemStyle: type ? { normal: { color: d.active === '1' ? 'green' : 'red' } } : d.itemStyle
+  data.map((item, i, arr) => (
+    {
+      source: item.name,
+      target: arr[i + 1] !== undefined ? arr[i + 1].name : ''
     })
   )
+
+const formatDados = (data, type) =>
+   data.dados
+   .sort(orderByName)
+   .map((d, i) =>
+     ({
+       ...d,
+       id: d.name,
+       alias: data.aliases ? data.aliases[d.name] : null,
+       itemStyle: type ? { normal: { color: d.active === '1' ? 'green' : 'red' } } : d.itemStyle
+     })
+   )
 
 const formatSeries = (series, attributes, data, format, links) =>
   series.map(s => {
@@ -81,7 +81,7 @@ const tooltipFunction = params => format =>
    ${params[0].name}: ${FORMAT_TYPE[0][format](params[0])}`
 
 const tooltipFunctionStatus = params => format =>
- `${params.seriesName}<br/>
+  `${params.seriesName}<br/>
   ${params.name}: ${FORMAT_TYPE[0][format](params)}`
 
 const formatTooltip = (tooltip, format, type) =>
@@ -142,7 +142,7 @@ export const showGroup = (id, params) =>
     .then(data => makeGraphics(data))
 
 const makeGraphics = data =>
-({
-  name: data.name,
-  options: data.graphics.sort(orderGraphics).map(g => setOptions(g))
-})
+  ({
+    name: data.name,
+    options: data.graphics.sort(orderGraphics).map(g => setOptions(g))
+  })
