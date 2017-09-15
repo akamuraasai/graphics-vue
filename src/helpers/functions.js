@@ -15,15 +15,15 @@ const links = data =>
 
 const formatDados = (data, type) =>
   data.dados
-   .sort(orderByName)
-   .map((d, i) =>
-     ({
-       ...d,
-       id: d.name,
-       alias: data.aliases ? data.aliases[d.name] : null,
-       itemStyle: type ? { normal: { color: d.active === '1' ? 'green' : 'red' } } : d.itemStyle
-     })
-   )
+    .sort(orderByName)
+    .map((d, i) =>
+      ({
+        ...d,
+        id: d.name,
+        alias: data.aliases ? data.aliases[d.name] : null,
+        itemStyle: type ? { normal: { color: d.active === '1' ? 'green' : 'red' } } : d.itemStyle
+      })
+    )
 
 const formatSeries = (series, attributes, data, format, links) =>
   series.map(s => {
