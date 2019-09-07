@@ -19,7 +19,7 @@
     "axios": "^0.16.2",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-polyfill": "^6.26.0",
-    "bootstrap-vue": "^1.0.0-beta.7",
+    "bootstrap-vue": "^2.0.0",
     "codacy-coverage": "^2.0.3",
     "karma-chrome-launcher": "^2.2.0",
     "vue": "^2.4.3",
