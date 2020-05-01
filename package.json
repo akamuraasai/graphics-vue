@@ -19,7 +19,7 @@
     "axios": "^0.16.2",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-polyfill": "^6.26.0",
-    "bootstrap-vue": "^1.0.0-beta.7",
+    "bootstrap-vue": "^1.0.0",
     "codacy-coverage": "^2.0.3",
     "karma-chrome-launcher": "^2.2.0",
     "vue": "^2.4.3",
@@ -27,7 +27,7 @@
     "vue-echarts": "^2.4.0",
     "vue-multiselect": "^2.0.2",
     "vue-router": "^2.7.0",
-    "snyk": "^1.69.7"
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
