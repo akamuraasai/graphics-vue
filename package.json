@@ -24,7 +24,7 @@
     "karma-chrome-launcher": "^2.2.0",
     "vue": "^2.4.3",
     "vue-color": "^2.4.0",
-    "vue-echarts": "^2.4.0",
+    "vue-echarts": "^4.0.0",
     "vue-multiselect": "^2.0.2",
     "vue-router": "^2.7.0",
     "snyk": "^1.69.7"
